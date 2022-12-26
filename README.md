@@ -2,14 +2,14 @@
 ## Cleiton Gangi
 ## Linkedin: https://www.linkedin.com/in/cleitongangi
 
-### Disclaimes
+### Disclaimer
 This application is for study purposes only, it is not a production application.
 
 ## Instructions to run the project
 ### Softwares required
 - Visual Studio 2022
 - .Net 6
-- Docker  
+- Docker
 
 ### Run
 Run through Visual Studio selecting Docker-compose.
@@ -22,6 +22,24 @@ If you need down the environment, you can use the following comand:
 > docker-compose  -f "docker-compose.yml" -f "docker-compose.override.yml" -p dockercompose-soccermanager-cg down
 
 Note: If you get error in compilation using docker, remove all bin and obj folders and try again.  
+
+## Technologies implemented
+ - .Net 6
+ - Dapper
+ - Entity Framework Core 6
+ - SQL Server 2019 
+ - AutoMapper
+ - FluentValidation
+ - Swagger
+ - XUnit
+ - Unit Test
+ - Integration Test
+
+## Architecture
+ - Responsibility separation concerns, SOLID, YAGNI and Clean Code
+ - Domain Driven Design (Layers and Domain Model Pattern)
+ - Repository
+ - IoC
 
 ## Documentation
 Endpoints are accessible through swagger for easy testing and understanding.  
@@ -36,7 +54,7 @@ POST /api/Account/SignUp
 }
 ```  	
 When a new user is registered, is generated a new team with a random name, a random country and a budget of 5,000,000. Is genereted a random team players with 3 Goalkeeper, 6 Defender, 6 Midfielder and 5 Attacker.  
-#### Response
+#### Responses 
 Status code 200 - User created successfully.  
 Status code 400 - If the are any error messages. E.g., The username already exists.  
 
@@ -49,7 +67,7 @@ POST /api/Account/Login
 }
 ```  
 Checks the username and password and returns a bearer token to allow access to secure endpoints.  
-#### Response
+#### Responses
 Status code 200 - Returns a bearer token to be used in the secure endpoints.  
 ```
 {
@@ -64,7 +82,7 @@ Status code 400 - If the are any error messages. E.g., Username or Password inva
 GET /api/Teams
 ```
 Allows get information about the team of authenticated user.  
-#### Response
+#### Responses
 Status code 200 - Returns the logged user team information.  
 ```
 {
@@ -81,7 +99,7 @@ Status code 401 - Unauthorized - User is not authenticated.
 GET /api/Teams/{teamId}
 ```  
 Allows get information about a specific team by teamId.  
-#### Response
+#### Responses
 Status code 200 - Returns team information.  
 ```
 {
@@ -113,7 +131,7 @@ Status code 401 - Unauthorized - User is not authenticated.
 GET /api/Teams/{teamId}/Players
 ```
 Allows get the players of a team.  
-#### Response
+#### Responses
 Status code 200 - Returns the team players.  
 ```
 [
@@ -147,7 +165,7 @@ PUT /api/Teams/Players/{playerId}
 }
 ```
 Allows update a player's informations.  
-#### Response
+#### Responses
 Status code 200 - Player information updated successfully.  
 Status code 400 - If there are any error messages.  
 Status code 401 - Unauthorized - User is not authenticated.  
@@ -162,7 +180,7 @@ POST /api/TransferList
 }
 ```  
 Allows put a player on the transfer list.  
-#### Response
+#### Responses
 Status code 201 - Player added in transfer list successfully.  
 Status code 400 - If there are any error messages.  
 Status code 401 - Unauthorized - User is not authenticated.  
@@ -172,7 +190,7 @@ Status code 401 - Unauthorized - User is not authenticated.
 GET /api/TransferList?page=2
 ```
 Allows view all transfer list.
-#### Response
+#### Responses
 Status code 200 - Got the transfer list successfully.  
 ```
 {
@@ -207,7 +225,7 @@ GET /api/Teams/{teamId}/TransferList?page2
 ```
 Allows view a team transfer list by teamId.
 
-#### Response
+#### Responses
 Status code 200 - Got the transfer list successfully.  
 ```
 {
@@ -241,7 +259,7 @@ Status code 200 - Got the transfer list successfully.
 GET /api/TransferList/11
 ```  
 Allows get a transfer item (player).  
-#### Response
+#### Responses
 Status code 200 - Got the informaion successfully.  
 ```
 {   
@@ -270,7 +288,7 @@ Status code 404 - If transfer list is not found.
 DELETE /api/TransferList/5
 ```
 Allows remove a player from a transfer list.  
-#### Response
+#### Responses
 Status code 200 - Player was removed from a transfer list successfully.  
 Status code 400 - If there are any error messages.  
 Status code 401 - Unauthorized - User is not authenticated.  
@@ -280,14 +298,14 @@ Status code 401 - Unauthorized - User is not authenticated.
 PUT /api/TransferList/{transferId}/Buy
 ```
 Allows user to buy a player from a transfer list.
-#### Response
+#### Responses
 Status code 200 - The player has been successfully purchased.  
 Status code 400 - If there are any error messages.  
 Status code 401 - Unauthorized - User is not authenticated.  
 
 ### Database
 
-#### User
+#### Users
 Stores the user informations. When a new user sign up, is registered in this table.
 
 | Column Name | Type          | Nullable | PK |
