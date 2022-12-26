@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  soccermanager.restapi:
+    image: ${DOCKER_REGISTRY-}soccermanagerrestapi
+    build:
+      context: .
+      dockerfile: src/SoccerManager.RestAPI/Dockerfile
+  sqldb:
+    container_name: "soccerapi-sqldb"  
+    image: "mcr.microsoft.com/mssql/server:2019-latest"    
+    environment:
+      SA_PASSWORD: "toptal@Test"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1454:1433"

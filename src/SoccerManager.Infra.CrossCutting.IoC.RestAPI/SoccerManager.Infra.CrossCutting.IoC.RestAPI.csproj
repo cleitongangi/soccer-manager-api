@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SoccerManager.Infra.Security\SoccerManager.Infra.Security.csproj" />
+    <ProjectReference Include="..\SoccerManager.Domain\SoccerManager.Domain.csproj" />
+    <ProjectReference Include="..\SoccerManager.Infra.Data\SoccerManager.Infra.Data.csproj" />
+    <ProjectReference Include="..\SoccerManager.Infra.Security\SoccerManager.Infra.Security.csproj" />
+  </ItemGroup>
+
+</Project>
