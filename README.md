@@ -5,6 +5,25 @@
 ### Disclaimer
 This application is for study purposes only, it is not a production application.
 
+## Architecture
+ - Responsibility separation concerns, SOLID, YAGNI and Clean Code
+ - DDD - Domain Driven Design (Layers and Domain Model Pattern)
+ - Repository
+ - IoC
+ 
+## Technologies used
+ - .Net 6
+ - Docker
+ - Dapper
+ - Entity Framework Core 6
+ - SQL Server 2019 
+ - AutoMapper
+ - FluentValidation
+ - Swagger
+ - XUnit
+ - Unit Test
+ - Integration Test
+ 
 ## Instructions to run the project
 ### Softwares required
 - Visual Studio 2022
@@ -22,24 +41,6 @@ If you need down the environment, you can use the following comand:
 > docker-compose  -f "docker-compose.yml" -f "docker-compose.override.yml" -p dockercompose-soccermanager-cg down
 
 Note: If you get error in compilation using docker, remove all bin and obj folders and try again.  
-
-## Technologies implemented
- - .Net 6
- - Dapper
- - Entity Framework Core 6
- - SQL Server 2019 
- - AutoMapper
- - FluentValidation
- - Swagger
- - XUnit
- - Unit Test
- - Integration Test
-
-## Architecture
- - Responsibility separation concerns, SOLID, YAGNI and Clean Code
- - Domain Driven Design (Layers and Domain Model Pattern)
- - Repository
- - IoC
 
 ## Documentation
 Endpoints are accessible through swagger for easy testing and understanding.  
